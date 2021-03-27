@@ -18,6 +18,16 @@ export class CartPage {
         cy.get(`${getSourceId()} a[href *= "newOrderForm"]`).contains(`Proceed to Checkout`)
                 .click();
     }
+
+    removeItemFromCart(itemId) {
+        cy.get(`${getSourceId()} a[href *= "workingItemId=${itemId}"]`).contains(`Remove`)
+            .click();
+    }
+
+    verifyItemNumber(expectedNumber) {
+        cy.get(`${getSourceId()} a[href *= "viewItem"]`)
+            .should('have.length', expectedNumber);
+    }
 }
 
 export const cartPage = new CartPage();
