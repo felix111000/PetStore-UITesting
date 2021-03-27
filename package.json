@@ -1,0 +1,24 @@
+{
+  "name": "pet-store-ui-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "test": "./node_modules/.bin/cypress run -b chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felix111000/pet-store-ui-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felix111000/pet-store-ui-test/issues"
+  },
+  "homepage": "https://github.com/felix111000/pet-store-ui-test#readme",
+  "dependencies": {
+    "cypress": "^6.8.0"
+  }
+}

@@ -1,0 +1,13 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+# misc
+.DS_Store
+
+# editor config
+.vscode/
+
+node_modules/
+cypress/screenshots/
+cypress/videos/
+
+*.xml
+*.iml
