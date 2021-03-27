@@ -1,1 +1,1 @@
-# PetStore-UITesting
+# pet-store-ui-test
