@@ -24,9 +24,27 @@ export class CartPage {
             .click();
     }
 
+    updateCart() {
+        cy.get(`input[name="updateCartQuantities"]`)
+            .click()
+    }
+    
+    updateQuantity(itemId, newQuantity) {
+        cy.get(`input[name="${itemId}"]`)
+            .clear()
+            .type(newQuantity)
+        this.updateCart();
+    }
+
     verifyItemNumber(expectedNumber) {
         cy.get(`${getSourceId()} a[href *= "viewItem"]`)
             .should('have.length', expectedNumber);
+    }
+
+    verifyQunaity(itemId, expectedQuantity) {
+        cy.get(`input[name="${itemId}"]`).should(($quantity) => {
+            expect($quantity).to.have.attr('value', expectedQuantity);
+        })
     }
 }
 
