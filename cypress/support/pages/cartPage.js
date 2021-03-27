@@ -28,7 +28,7 @@ export class CartPage {
         cy.get(`input[name="updateCartQuantities"]`)
             .click()
     }
-    
+
     updateQuantity(itemId, newQuantity) {
         cy.get(`input[name="${itemId}"]`)
             .clear()
@@ -45,6 +45,11 @@ export class CartPage {
         cy.get(`input[name="${itemId}"]`).should(($quantity) => {
             expect($quantity).to.have.attr('value', expectedQuantity);
         })
+    }
+
+    verifyCartEmpty() {
+        cy.get(`${getSourceId()} tbody>tr`).eq(1).find(`td>b`)
+            .should('have.text', 'Your cart is empty.')
     }
 }
 

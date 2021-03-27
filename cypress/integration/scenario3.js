@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 import { catalogPage } from '../support/pages/catalogPage';
 import { cartPage } from '../support/pages/cartPage';
 

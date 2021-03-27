@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 import { searchPage } from '../support/pages/searchPage';
 
 var searchText;
