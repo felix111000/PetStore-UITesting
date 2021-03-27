@@ -1,1 +1,9 @@
-{}
+{
+    "env": {
+        "base_url": "https://petstore.octoperf.com",
+        "login_url": "/actions/Account.action",
+        "catalog_url": "/actions/Catalog.action"
+    },
+    "viewportHeight" : 660,
+    "viewportWidth" : 1000
+}
