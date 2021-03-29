@@ -31,6 +31,13 @@ const getSourceId = () => {
               .should('be.visible')
               .and('have.text', '\n\t\n        Welcome ' + firstName + '!\n      \n');
       }
+
+      verifyMustSignonMessage() {    
+        cy.get(`.messages li`).should(($li) => {
+            const text = $li.text();
+            expect(text).to.match(/You must sign on before attempting to check out.  Please sign on and try checking out again./);
+        })
+	  }
   
       loginWith(username, password) {
           this.setUsername(username);
