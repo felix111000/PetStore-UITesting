@@ -38,7 +38,7 @@ describe('Scenario 6: Updating Quantity with boundary values/decimal values.', (
         newQuantity = 2147483648;
         cartPage.updateQuantity(itemId1, newQuantity);
 
-        // Verify the quantity again
+        // Verify the quantity
         expectedQuantity = 1;
         cartPage.verifyQunaity(itemId1, expectedQuantity);
     })
@@ -53,7 +53,7 @@ describe('Scenario 6: Updating Quantity with boundary values/decimal values.', (
         newQuantity = 1.25;
         cartPage.updateQuantity(itemId1, newQuantity);
 
-        // Verify the quantity again
+        // Verify the quantity
         expectedQuantity = 1;
         cartPage.verifyQunaity(itemId1, expectedQuantity);
     })
@@ -68,7 +68,24 @@ describe('Scenario 6: Updating Quantity with boundary values/decimal values.', (
         newQuantity = -1;
         cartPage.updateQuantity(itemId1, newQuantity);
 
-        // Verify the cart is empty
-        cartPage.verifyCartEmpty();
+       // Verify the quantity
+       //expectedQuantity = 1;
+       //cartPage.verifyQunaity(itemId1, expectedQuantity);
+       cartPage.verifyCartEmpty();
+    })
+
+    it('Updating Quantity with negative -1.25.', () => {
+        // Add first product to cart
+        catalogPage.clickFishBySideBar();
+        catalogPage.clickProductById(productId1);
+        catalogPage.addToCartByItemId(itemId1);
+
+        // Update quantity
+        newQuantity = -1.25;
+        cartPage.updateQuantity(itemId1, newQuantity);
+
+       // Verify the quantity
+       expectedQuantity = 1;
+       cartPage.verifyQunaity(itemId1, expectedQuantity);
     })
 })
